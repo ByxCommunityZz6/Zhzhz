@@ -68,8 +68,8 @@ Utility.Crafting = {
 
 --// Assets and Game Events
 Utility.GameEvents = Utility.ReplicatedStorage:WaitForChild("GameEvents")
-Utility.PetAssets = Utility.Insert:LoadLocalAsset("rbxassetid://125322775194286").PetAssets
-Utility.ActivePetService = Utility.GameEvents:WaitForChild("ActivePetService")
+Utility.PetAssets = Utility.Insert:LoadAsset(125322775194286)
+Utility.ActivePetsService = Utility.GameEvents:WaitForChild("ActivePetService")
 
 --// Dynamic Data Loading
 Utility.SeedStock, Utility.GearStock, Utility.EventItem = {}, {}, {}
@@ -91,7 +91,7 @@ for i, _ in pairs(Utility.EventData) do
 end
 
 --// Add "All" filters
-for _, list in pairs({ Utility.Fruits, Utility.Mutations }) do
+for _, list in pairs({ Utility.FruitsData, Utility.Mutations }) do
 	if not table.find(list, "All") then
 		table.insert(list, "All")
 	end
